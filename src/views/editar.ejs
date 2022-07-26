@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %> 
+    <title>Ninetech - Editar Producto</title>
+</head>
+<body>
+    <%- include("./partials/header.ejs") %> 
+    <main>
+        <section>
+            <div class="contain-form">
+
+                    
+                <form class="form-create" action="/detalles/<%= producto.id %>/editar?_method=put" method="POST">
+                    <div class="form-tittle">
+                        <h2 class="tittle">Editar Producto </h2>
+                    </div>
+                        
+                        
+                    <div class="form-div">
+                        <label class="createLabel" for="nombre">Nombre del producto </label>
+                        <input type="text" name="name" id="nombre" value="<%= producto.name %>" required>
+                    </div>
+                    <div class="form-div" id="descripcion">
+                        <label class="createLabel" for="descripcion" id="descripcion">Descripcion </label>
+                        <textarea style="resize: none;" name="description" id="" cols="20" rows="5" required><%= producto.description.join("\n") %></textarea>
+                    </div>
+                    <div class="form-div">
+                        <label class="createLabel" for="">Imagen</label>
+                        <input type="file" name="image" id="fileProduct" accept=".png, .jpg, .jpeg" value="<%= producto.image %>" required>
+                    </div>
+                    <div class="form-div">
+                        <label class="createLabel" for="">Precio </label>
+                        <input type="number"  name="price" id="precio" value="<%= parseInt(producto.price) %>" required>
+                    </div>
+                    <div class="form-div" >
+                        <label class="createLabel" for="enOferta">En oferta </label>
+                        <div class="off">
+                            <% if (producto.enOferta) { %>
+                                <input  class="check" type="checkbox" name="enOferta" id="check" checked>
+                                <% } else { %>
+                                    <input class="check" type="checkbox" name="enOferta" id="check">
+                                <% } %> 
+                            <label class="lbl" for="check"></label>
+                        </div>
+                    </div>
+                    <div class="form-div" id="descuento" style="display: <%= producto.enOferta === true ? 'block' : 'none' %>;">
+                        <label class="createLabel" class="createLabel">Descuento </label>
+                        <input type="number" name="discount" value="<%= parseInt(producto.discount) %>" min="1" max="100">
+                    </div>
+
+                    <div class="form-div" id="categoria">
+                        <label class="createLabel">Categoria</label>
+                        <select name="category" class="createLabel">
+                            <option value="">Selecciona una categoria</option>
+                            <option value="mouseTeclado" <%= producto.category === "mouseTeclado" ? 'selected' : "" %>>Mouse y teclados</option>
+                            <option value="audioVideo" <%= producto.category === "audioVideo" ? 'selected' : "" %>>Audio y video</option>
+                            <option value="hardware" <%= producto.category === "hardware" ? 'selected' : "" %>>Hardware</option>  
+                        </select>
+                    </div>
+
+                    <div class="buttonDiv">
+                        <button type="submit" class="buttonSave">Guardar Producto</button>
+                    </div>
+               
+            </div>
+
+            </form>
+        </section>
+
+        
+    </main>
+    <%- include("./partials/footer.ejs") %> 
+    <script src="/js/burger.js"></script>
+    <script src="/js/check.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %> 
+    <title>Ninetech - Home</title>
+</head>
+<body>
+    <%- include("./partials/header.ejs") %> 
+    <main>
+        <section class="main-product">
+            <img class="img-desktop" src="/img/teclado.jpg" alt="teclado">
+            <img class="img-mobile" src="/img/teclado2.jpg" alt="teclado">
+            <div>
+                <h3>HyperX AlloyFPS</h3>
+                <p>Compacto e ideal para juegos FPS en cualquier sitio</p>
+                <a href="/productos/detalles/5">Ver mas <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </section>
+        <h2 class="divisor" style="margin: 0 0 3px;">CATEGORIAS</h2>
+        <section class="categories">
+            <article class="main-category">
+                <a href="#">
+                    <img src="/img/Categorias/arma tu pc.jpg" alt="arma tu pc">
+                </a>
+            </article>
+            <article class="sub-categories">
+                <a href="#">
+                    <img src="/img/Categorias/teclados.jpg" alt="mouse y teclados">
+                </a>
+                <a href="#">
+                    <img src="/img/Categorias/audio.jpg" alt="audio y video">
+                </a>
+                <a href="#">
+                    <img src="/img/Categorias/hardware.jpg" alt="hardware">
+                </a>
+            </article>
+        </section>
+        <h2 class="divisor">OFERTAS</h2>
+        <section class="products">
+            <% productos.forEach(producto => { %>
+                <% if (producto.enOferta) { %>
+                    <article>
+                        <a href="/productos/detalles/<%= producto.id %>">
+                            <div class="details">
+                                <h4><%= producto.name %> </h4>
+                                <p>$<%= Math.floor(producto.price - (producto.price * (producto.discount / 100))) %>  <span>$<%= producto.price %> </span></p>
+                            </div>
+                            <img src="/img/Productos/<%= producto.image %> " alt="<%= producto.name %>">
+                        </a>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+        <h2 class="divisor">PRODUCTOS DESTACADOS</h2>
+        <section class="products">
+            <% productos.forEach(producto => { %>
+                <% if (!producto.enOferta) { %>
+                    <article>
+                        <a href="/productos/detalles/<%= producto.id %>">
+                            <div class="details">
+                                <h4><%= producto.name %> </h4>
+                                <p>$<%= producto.price %> </p>
+                            </div>
+                            <img src="/img/Productos/<%= producto.image %> " alt="<%= producto.name %>">
+                        </a>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+    </main>
+    <%- include("./partials/footer.ejs") %> 
+    <script src="js/burger.js"></script>
+</body>
+</html>

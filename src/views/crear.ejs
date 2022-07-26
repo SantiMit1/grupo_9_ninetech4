@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %> 
+    <title>Ninetech - Crear Producto</title>
+</head>
+<body>
+    <%- include("./partials/header.ejs") %> 
+    <main>
+        <section>
+            <div class="contain-form">
+
+                    
+                <form class="form-create" action="/crear" method="POST">
+                    <div class="form-tittle">
+                        <h2 class="tittle">Crear Producto </h2>
+                    </div>
+                        
+                        
+                    <div class="form-div">
+                        <label class="createLabel" for="nombre">Nombre del producto </label>
+                        <input type="text" name="name" id="nombre" placeholder="Ej: Mouse Logitech G Pro" required>
+                    </div>
+                    <div class="form-div" id="descripcion">
+                        <label class="createLabel" for="descripcion" id="descripcion">Descripcion </label>
+                        <textarea style="resize: none;" name="description" id="" cols="20" rows="5" required></textarea>
+                    </div>
+                    <div class="form-div">
+                        <label class="createLabel" for="">Imagen </label>
+                        <input type="file" name="image" id="fileProduct" accept="png, jpg, jpeg" required>
+                    </div>
+                    <div class="form-div">
+                        <label class="createLabel" for="">Precio </label>
+                        <input type="number"  name="price" id="precio" placeholder="Ej: 20000" required>
+                    </div>
+                    
+                    <div class="form-div" >
+                        <label class="createLabel" for="enOferta">En oferta </label>
+                        <div class="off">
+                            <input class="check" type="checkbox" name="enOferta" id="check">
+                            <label class="lbl" for="check"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-div" id="descuento">
+                        <label class="createLabel" class="createLabel" for="" >Descuento </label>
+                        <input type="number" name="discount" id="" placeholder="25" min="1" max="100" required>
+                    </div>
+                    
+                    <div class="form-div" id="categoria">
+                        <label class="createLabel" for="">Categoria</label>
+                        <select name="category" id="" class="createLabel">
+                            <option value="">Selecciona una categoria</option>
+                            <option value="mouseTeclado">Mouse y teclados</option>
+                            <option value="audioVideo">Audio y video</option>
+                            <option value="hardware">Hardware</option>  
+                        </select>
+                    </div>
+
+
+                    <div class="buttonDiv">
+                        <button class="buttonSave" type="submit">Guardar Producto</button>
+                    </div>
+               
+            </div>
+
+            </form>
+        </section>
+
+    </main>
+    <%- include("./partials/footer.ejs") %> 
+    <script src="/js/burger.js"></script>
+    <script src="/js/check.js"></script>
+</body>
+</html>

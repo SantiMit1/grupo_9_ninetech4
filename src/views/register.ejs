@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %> 
+    <title>Registrarse</title>
+</head>
+<body>
+    <header class="login">
+        <figure>
+            <a href="/"><img src="/img/logo.png" alt="logo" class="logo"></a>
+        </figure>
+        <a href="/"><i class="fa-solid fa-x close"></i></a>
+    </header>
+    <main class="login">
+        <aside class="login">
+            <figure>
+                <a href="/"><img src="/img/logo.png" alt="logo" class="logo"></a>
+            </figure>
+            <img src="/img/gpu.png" alt="gpu" class="gpu">
+        </aside>
+        <div class="login-container">
+            <div class="links">
+                <a href="login" class="login">Iniciar Sesión</a>
+                <a href="#" class="signup active">Registrarse</a>
+            </div>
+            <form action="#">
+                <div class="nombre-apellido">
+                    <input type="text" name="apellido" placeholder="Nombre">
+                    <input type="text" name="apellido" placeholder="Apellido">
+                </div>
+                <input type="email" name="email" placeholder="Correo Electronico">
+                <div class="localidad-cp">
+                    <input type="text" name="localidad" class="localidad" placeholder="Localidad">
+                    <input type="text" name="codigoPostal" class="cp" placeholder="C.P.">
+                </div>
+                <input type="text" name="direccion" placeholder="Dirección">
+                <input type="password" name="password" placeholder="Contraseña">
+                <input type="password" name="password2" placeholder="Repetir Contraseña">
+                <input type="submit" value="Registrarse" class="submit">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

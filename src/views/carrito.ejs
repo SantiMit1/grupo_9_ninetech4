@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %> 
+    <title>Carrito</title>
+</head>
+<body>
+    <%- include("./partials/header.ejs") %> 
+    <main>
+        <h3 class="titulo"><i class="fa-solid fa-cart-shopping"></i> Productos en su carrito</h3>
+        <section class="cart-products">
+            <article>
+                <div class="details">
+                    <img src="/img/Productos/disco ssd.jpg" alt="DISCO SOLIDO SDD 240GB">
+                    <div class="product-name">
+                        <h4>DISCO SOLIDO SSD 240GB KINGSTON A400 SATA III</h4>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="price">
+                    <form>
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" name="cantidad" id="cantidad" value="1">
+                    </form>
+                    <p>Precio: $6000</p>
+                </div>
+            </article>
+            <hr>
+            <article>
+                <div class="details">
+                    <img src="/img/Productos/gtx 1660.jpg" alt="GTX 1660 SUPER">
+                    <div class="product-name">
+                        <h4>PLACA DE VIDEO EVGA GTX 1660 SUPER SC ULTRA 6GB</h4>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="price">
+                    <form>
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" name="cantidad" id="cantidad" value="1">
+                    </form>
+                    <p>Precio: $55000</p>
+                </div>
+            </article>
+            <hr>
+            <article>
+                <div class="details">
+                    <img src="/img/Productos/mouse cooler master.jpg" alt="COOLER MASTER MM711">
+                    <div class="product-name">
+                        <h4>MOUSE COOLER MASTER MM711 BLANCO MATTE RGB</h4>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="price">
+                    <form>
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" name="cantidad" id="cantidad" value="1">
+                    </form>
+                    <p>Precio: $7500</p>
+                </div>
+            </article>
+        </section>
+        <hr class="cart-divisor">
+        <section class="payment">
+            <form method="GET" action="#">
+                <article>
+                    <p><i class="fa-solid fa-truck"></i> Seleccione forma de envio</p>
+                    <hr>
+                    <div>
+                        <select name="shipment" id="shipment">
+                            <option value="">Seleccione el metodo de envio</option>
+                            <option value="1">Envio normal a domicilio</option>
+                            <option value="2">Envio prioritario</option>
+                            <option value="3">Retiro en el local</option>
+                        </select>
+                    </div>
+                </article>
+                <article>
+                    <p><i class="fa-solid fa-credit-card"></i> Seleccione forma de pago</p>
+                    <hr>
+                    <div>
+                        <select name="paymethod" id="paymethod">
+                            <option value="">Seleccione un metodo de pago</option>
+                            <option value="tarjeta">Tarjeta de credito</option>
+                            <option value="mp">Mercado pago</option>
+                            <option value="pfacil">Pago facil</option>
+                            <option value="rpago">Rapipago</option>
+                        </select>
+                    </div>
+                </article>
+                <article>
+                    <p><i class="fa-solid fa-dollar-sign"></i> Resumen de la compra</p>
+                    <hr>
+                    <div>
+                        <span>Subtotal: $68500</span>
+                        <span>Envio: $1000</span>
+                        <p class="total">Total: $69500</p>
+                        <button type="submit"><i class="fa-solid fa-cart-shopping"></i> Finalizar compra</button>
+                    </div>
+                </article>
+            </form>
+        </section>
+    </main>
+    <%- include("./partials/footer.ejs") %> 
+    <script src="/js/burger.js"></script>
+</body>
+</html>
