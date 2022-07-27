@@ -27,9 +27,9 @@ let controller = {
         res.render("crear")
     },
 
-    // guardar: (req, res) => {
-
-    // }
+    guardar: (req, res) => {
+        res.send("guardado");
+    },
 
     editar: (req, res)=>{
         const id = Number(req.params.id);
@@ -40,13 +40,13 @@ let controller = {
         });
     },
 
-    // actualizar: (req, res) => {
+    actualizar: (req, res) => {
+        res.send("actualizado");
+    },
 
-    // },
-
-    // borrar: (req, res) => {
-
-    // }
+    borrar: (req, res) => {
+        res.send("borrado")
+    }
 }
 
 module.exports = controller;

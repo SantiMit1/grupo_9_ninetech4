@@ -80,10 +80,10 @@
 
                     </div>
                     <div class="edit-delete">
-                        <form action="/productos/detalles/<%= producto.id %>/editar" method="GET">
+                        <form action="/productos/detalles/editar/<%= producto.id %>" method="GET">
                             <button type="submit" style="background-color: #3483FA;">Editar</button>
                         </form>
-                        <form action="/productos/detalles/<%= producto.id %>/borrar?_method=delete" method="POST">
+                        <form action="/productos/detalles/borrar/<%= producto.id %>?_method=delete" method="POST">
                             <button type="submit" style="background-color: #C90000;">Borrar</button>
                         </form>
                     </div>
