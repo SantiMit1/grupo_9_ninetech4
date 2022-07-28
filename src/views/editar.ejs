@@ -11,7 +11,7 @@
             <div class="contain-form">
 
                     
-                <form class="form-create" action="/productos/detalles/editar/<%= producto.id %>?_method=put" method="POST">
+                <form class="form-create" action="/productos/detalles/editar/<%= producto.id %>?_method=put" method="POST" enctype="multipart/form-data">
                     <div class="form-tittle">
                         <h2 class="tittle">Editar Producto </h2>
                     </div>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-div">
                         <label class="createLabel" for="">Imagen</label>
-                        <input type="file" name="image" id="fileProduct" accept=".png, .jpg, .jpeg" value="<%= producto.image %>" required>
+                        <input type="file" name="image" id="fileProduct" accept=".png, .jpg, .jpeg" required>
                     </div>
                     <div class="form-div">
                         <label class="createLabel" for="">Precio </label>
