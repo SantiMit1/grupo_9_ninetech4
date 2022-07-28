@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productos.json"), "utf-8");
 let productos = JSON.parse(productosJSON);
+const jsonDB = require("../model/jsonDatabase");
+const productModel = jsonDB("productos");
 
 let controller = {
     carrito: (req, res) => {
@@ -28,7 +30,12 @@ let controller = {
     },
 
     guardar: (req, res) => {
-        res.send("guardado");
+        let producto = req.body;
+        producto.description = producto.description.split("\r\n");
+        producto.image = req.file ? req.file.filename : "default.jpg"
+        productModel.create(producto);
+        
+        res.redirect("/")
     },
 
     editar: (req, res)=>{
@@ -41,11 +48,22 @@ let controller = {
     },
 
     actualizar: (req, res) => {
-        res.send("actualizado");
+        let producto = productModel.find(req.params.id);
+        producto = {
+            id: producto.id,
+            ...req.body,
+            image: req.file ? req.file.filename : producto.image
+        }
+        producto.description = producto.description.split("\r\n");
+        productModel.update(producto);
+
+        res.redirect("/")
     },
 
     borrar: (req, res) => {
-        res.send("borrado")
+        const id = req.params.id;
+        productModel.delete(id);
+        res.redirect("/");
     }
 }
 

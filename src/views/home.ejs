@@ -35,7 +35,9 @@
                 </a>
             </article>
         </section>
-        <h2 class="divisor">OFERTAS</h2>
+        <% if (productos.filter(producto => producto.enOferta).length > 0) { %>
+            <h2 class="divisor">OFERTAS</h2>
+        <% } %>
         <section class="products">
             <% productos.forEach(producto => { %>
                 <% if (producto.enOferta) { %>
