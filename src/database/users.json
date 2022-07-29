@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "nombre": "Carolyn",
+        "apellido": "Iorns",
+        "email": "ciorns0@cmu.edu",
+        "localidad": "Nor Yerznka",
+        "codigoPostal": null,
+        "direccion": "5136 Grim Street",
+        "contraseña": "X1Vhca",
+        "admin": false
+    },
+    {
+        "id": 2,
+        "nombre": "Lucian",
+        "apellido": "Piff",
+        "email": "lpiff1@plala.or.jp",
+        "localidad": "Jāsim",
+        "codigoPostal": null,
+        "direccion": "367 Del Mar Avenue",
+        "contraseña": "WhQYNk",
+        "admin": true
+    },
+    {
+        "id": 3,
+        "nombre": "Bordy",
+        "apellido": "Harrad",
+        "email": "bharrad2@yahoo.com",
+        "localidad": "Farsta",
+        "codigoPostal": "123 47",
+        "direccion": "77 Northwestern Court",
+        "contraseña": "PLKxDLggfXPB",
+        "admin": true
+    },
+    {
+        "id": 4,
+        "nombre": "Curry",
+        "apellido": "Burchard",
+        "email": "cburchard3@slashdot.org",
+        "localidad": "Lokokrangan",
+        "codigoPostal": null,
+        "direccion": "1 Merchant Park",
+        "contraseña": "OXDE53o",
+        "admin": true
+    },
+    {
+        "id": 5,
+        "nombre": "Cosetta",
+        "apellido": "Kiossel",
+        "email": "ckiossel4@bbc.co.uk",
+        "localidad": "Freixo de Numão",
+        "codigoPostal": "5155-205",
+        "direccion": "6381 Clarendon Center",
+        "contraseña": "UXk3QrPu",
+        "admin": true
+    }
+]
