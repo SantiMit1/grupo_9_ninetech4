@@ -44,7 +44,7 @@
                             <label class="lbl" for="check"></label>
                         </div>
                     </div>
-                    <div class="form-div" id="descuento" style="display: <%= producto.enOferta === true ? 'block' : 'none' %>;">
+                    <div class="form-div" id="descuento" style="display: <%= producto.enOferta === true || producto.enOferta === "on" ? 'block' : 'none' %>;">
                         <label class="createLabel" class="createLabel">Descuento </label>
                         <input type="number" name="discount" value="<%= parseInt(producto.discount) %>" min="1" max="100">
                     </div>
