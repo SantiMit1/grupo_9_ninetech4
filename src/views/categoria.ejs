@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %> 
+    <title>Productos</title>
+</head>
+<body>
+    <%- include("./partials/header.ejs") %> 
+    <main>
+        <% if (categoria == "hardware") { %>
+            <h2 class="divisor" style="margin-top: 0;">HARDWARE</h2>
+        <% } else if (categoria == "mouseTeclado") { %>
+            <h2 class="divisor" style="margin-top: 0;">MOUSE Y TECLADOS</h2>
+        <% } else if (categoria == "audioVideo") { %>
+            <h2 class="divisor" style="margin-top: 0;">AUDIO Y VIDEO</h2>
+        <% } %> 
+        <section class="products">
+            <% productos.forEach(producto => { %>
+                <%- include("./partials/producto.ejs", {producto}) %> 
+            <% }) %>
+        </section>
+    </main>
+    <%- include("./partials/footer.ejs") %> 
+</body>
+</html>

@@ -17,7 +17,16 @@ let controller = {
             productos: resultados,
             busqueda: busqueda.toUpperCase()
         })
-    }}
+    }},
+
+    categoria: (req, res) => {
+        const categoria = req.query.q;
+        const productosFiltrados = productos.filter(producto => producto.category === categoria);
+        res.render("categoria", {
+            productos: productosFiltrados,
+            categoria: categoria
+        })
+    }
 }
 
 module.exports = controller;
