@@ -8,6 +8,9 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     background-color:#f0f0f0;
     color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -242,6 +245,8 @@ main section.products h2 {
 
 footer {
     background: linear-gradient(to bottom, #f0f0f0, #c5c5c5);
+    width: 100%;
+    margin-top: auto;
 }
 
 footer figure {
