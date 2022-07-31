@@ -8,7 +8,16 @@ let controller = {
         res.render("home", {
             productos: productos
         });
-    }
+    },
+
+    busqueda: (req, res) => {{
+        const busqueda = req.query.q;
+        let resultados = productos.filter(producto => producto.name.toUpperCase().includes(busqueda.toUpperCase()));
+        res.render("resultados", {
+            productos: resultados,
+            busqueda: busqueda.toUpperCase()
+        })
+    }}
 }
 
 module.exports = controller;
