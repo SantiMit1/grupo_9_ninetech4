@@ -55,19 +55,19 @@
         </section>
         <h2 class="divisor">PRODUCTOS DESTACADOS</h2>
         <section class="products">
-            <% productos.forEach(producto => { %>
-                <% if (!producto.enOferta) { %>
+            <% for (let i = productos.length - 1; i >= productos.length - 6; i--) { %>
+                <% if (!productos[i].enOferta) { %>
                     <article>
-                        <a href="/productos/detalles/<%= producto.id %>">
+                        <a href="/productos/detalles/<%= productos[i].id %>">
                             <div class="details">
-                                <h4><%= producto.name %> </h4>
-                                <p>$<%= producto.price %> </p>
+                                <h4><%= productos[i].name %> </h4>
+                                <p>$<%= productos[i].price %> </p>
                             </div>
-                            <img src="/img/Productos/<%= producto.image %> " alt="<%= producto.name %>">
+                            <img src="/img/Productos/<%= productos[i].image %> " alt="<%= productos[i].name %>">
                         </a>
                     </article>
                 <% } %>
-            <% }) %>
+            <% } %>
         </section>
     </main>
     <%- include("./partials/footer.ejs") %> 
