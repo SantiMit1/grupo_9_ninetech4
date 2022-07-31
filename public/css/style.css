@@ -1024,43 +1024,6 @@ select.createLabel {
 
 @media (min-width: 768px) { /*TABLET*/
 
-    nav form input {
-        max-width: 100%;
-    }
-
-    nav ul.desktop {
-        display: inline-block;
-        position: relative;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav ul.desktop li a {
-        color: black;
-        transition: .3s;
-    }
-
-    nav ul.desktop li a::after {
-        content: "";
-        display: block;
-        background-color: black;
-        height: 3px;
-        width: 0;
-        left: 0;
-        transition: .3s;
-        margin: 0 auto;
-    }
-
-    nav ul.desktop li a:hover::after {
-        width: 100%;
-    }
-
-    div#burger-menu {
-        display: none;
-    }
-
     main section.main-product img.img-mobile {
         width: 100%;
         display: none;
@@ -1189,6 +1152,43 @@ select.createLabel {
 
     nav form button {
         display: inline;
+    }
+
+    nav form input {
+        max-width: 100%;
+    }
+
+    nav ul.desktop {
+        display: inline-block;
+        position: relative;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.desktop li a {
+        color: black;
+        transition: .3s;
+    }
+
+    nav ul.desktop li a::after {
+        content: "";
+        display: block;
+        background-color: black;
+        height: 3px;
+        width: 0;
+        left: 0;
+        transition: .3s;
+        margin: 0 auto;
+    }
+
+    nav ul.desktop li a:hover::after {
+        width: 100%;
+    }
+
+    div#burger-menu {
+        display: none;
     }
 
     main section.main-product div {
