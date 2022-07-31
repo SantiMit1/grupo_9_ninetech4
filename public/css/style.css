@@ -1071,6 +1071,10 @@ select.createLabel {
         margin: auto;
     }
 
+    main section.products h2 {
+        align-self: flex-start;
+    }
+
     .nf-container h1 {
         font-size: 2em;
     }

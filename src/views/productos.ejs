@@ -10,27 +10,7 @@
         <h2 class="divisor" style="margin-top: 0;">TODOS LOS PRODUCTOS</h2>
         <section class="products">
             <% productos.forEach(producto => { %>
-                <% if (producto.enOferta) { %>
-                    <article>
-                        <a href="/productos/detalles/<%= producto.id %>">
-                            <div class="details">
-                                <h4><%= producto.name %> </h4>
-                                <p>$<%= Math.floor(producto.price - (producto.price * (producto.discount / 100))) %>  <span>$<%= producto.price %> </span></p>
-                            </div>
-                            <img src="/img/Productos/<%= producto.image %> " alt="<%= producto.name %>">
-                        </a>
-                    </article>
-                <% } else { %>
-                    <article>
-                        <a href="/productos/detalles/<%= producto.id %>">
-                            <div class="details">
-                                <h4><%= producto.name %> </h4>
-                                <p>$<%= producto.price %> </p>
-                            </div>
-                            <img src="/img/Productos/<%= producto.image %> " alt="<%= producto.name %>">
-                        </a>
-                    </article>
-                <% } %> 
+                <%- include("./partials/producto.ejs", {producto}) %> 
             <% }) %>
         </section>
     </main>
