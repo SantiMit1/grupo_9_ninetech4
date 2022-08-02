@@ -40,7 +40,7 @@ let controller = {
 
     editar: (req, res)=>{
         const id = Number(req.params.id);
-        const producto = productos.find(producto => producto.id === id);
+        const producto = productModel.find(id);
         res.render("editar", {
             producto: producto,
             productos: productos
@@ -48,7 +48,8 @@ let controller = {
     },
 
     actualizar: (req, res) => {
-        let producto = productModel.find(req.params.id);
+        const id = Number(req.params.id);
+        let producto = productModel.find(id);
         producto = {
             id: producto.id,
             ...req.body,
