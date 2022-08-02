@@ -4,7 +4,7 @@
   "description": "Vamos a ofrecer Hardware y perifericos de PC",
   "main": "app.js",
   "scripts": {
-    "start": "nodemonapp.js"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
