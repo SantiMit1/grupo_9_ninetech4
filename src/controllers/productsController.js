@@ -32,7 +32,7 @@ let controller = {
     guardar: (req, res) => {
         let producto = req.body;
         producto.description = producto.description.split("\r\n");
-        producto.image = req.file ? req.file.filename : "default.jpg"
+        producto.image = req.file ? req.file.filename : "default.png"
         productModel.create(producto);
         
         res.redirect("/")
