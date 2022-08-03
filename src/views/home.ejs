@@ -56,15 +56,27 @@
         <h2 class="divisor">PRODUCTOS DESTACADOS</h2>
         <section class="products">
             <% for (let i = productos.length - 1; i >= productos.length - 6; i--) { %>
+                <% if (productos[i].enOferta) { %>
                     <article>
                         <a href="/productos/detalles/<%= productos[i].id %>">
-                        <div class="details">
-                            <h4><%= productos[i].name %> </h4>
-                            <p>$<%= productos[i].price %> </p>
-                        </div>
-                        <img src="/img/Productos/<%= productos[i].image %> " alt="<%= productos[i].name %>">
-                    </a>
-                </article>
+                            <div class="details">
+                                <h4><%= productos[i].name %> </h4>
+                                <p>$<%= Math.floor(productos[i].price - (productos[i].price * (productos[i].discount / 100))) %>  <span>$<%= productos[i].price %> </span></p>
+                            </div>
+                            <img src="/img/Productos/<%= productos[i].image %> " alt="<%= productos[i].name %>">
+                        </a>
+                    </article>
+                <% } else { %>
+                    <article>
+                        <a href="/productos/detalles/<%= productos[i].id %>">
+                            <div class="details">
+                                <h4><%= productos[i].name %> </h4>
+                                <p>$<%= productos[i].price %> </p>
+                            </div>
+                            <img src="/img/Productos/<%= productos[i].image %> " alt="<%= productos[i].name %>">
+                        </a>
+                    </article>
+                <% } %> 
             <% } %>
         </section>
     </main>
