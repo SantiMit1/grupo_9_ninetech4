@@ -1,10 +1,9 @@
-const fs = require("fs");
-const path = require("path");
-let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productos.json"), "utf-8");
-let productos = JSON.parse(productosJSON);
+const jsonDB = require("../model/jsonDatabase");
+const productModel = jsonDB("productos");
 
 let controller = {
     index: (req, res) => {
+        let productos = productModel.all();
         res.render("home", {
             productos: productos
         });
@@ -12,6 +11,7 @@ let controller = {
 
     busqueda: (req, res) => {{
         const busqueda = req.query.q;
+        let productos = productModel.all();
         let resultados = productos.filter(producto => producto.name.toUpperCase().includes(busqueda.toUpperCase()));
         res.render("resultados", {
             productos: resultados,
@@ -21,6 +21,7 @@ let controller = {
 
     categoria: (req, res) => {
         const categoria = req.query.q;
+        let productos = productModel.all();
         const productosFiltrados = productos.filter(producto => producto.category === categoria);
         res.render("categoria", {
             productos: productosFiltrados,

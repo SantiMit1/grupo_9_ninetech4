@@ -1,9 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productos.json"), "utf-8");
-let productos = JSON.parse(productosJSON);
 const jsonDB = require("../model/jsonDatabase");
 const productModel = jsonDB("productos");
+let productos = productModel.all()
 
 let controller = {
     carrito: (req, res) => {
@@ -12,7 +9,7 @@ let controller = {
 
     detalles: (req, res) => {
         const id = Number(req.params.id);
-        const producto = productos.find(producto => producto.id === id);
+        const producto = productModel.find(id);
         res.render("detalles", {
             producto: producto,
             productos: productos
@@ -42,10 +39,9 @@ let controller = {
 
     editar: (req, res)=>{
         const id = Number(req.params.id);
-        const producto = productos.find(producto => producto.id === id);
+        const producto = productModel.find(id);
         res.render("editar", {
             producto: producto,
-            productos: productos
         });
     },
 
