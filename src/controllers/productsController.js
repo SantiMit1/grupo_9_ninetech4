@@ -30,12 +30,14 @@ let controller = {
     },
 
     guardar: (req, res) => {
-        let producto = req.body;
-        producto.description = producto.description.split("\r\n");
-        producto.image = req.file ? req.file.filename : "default.png"
-        productModel.create(producto);
-        
-        res.redirect("/")
+        let newProduct = {
+            ...req.body,
+            image: req.file ? req.file.filename : "default.png"
+        };
+        newProduct.description = newProduct.description.split("\r\n");
+
+        productModel.create(newProduct)
+		res.redirect('/')
     },
 
     editar: (req, res)=>{
@@ -48,16 +50,18 @@ let controller = {
     },
 
     actualizar: (req, res) => {
-        let producto = productModel.find(req.params.id);
-        producto = {
-            id: producto.id,
-            ...req.body,
-            image: req.file ? req.file.filename : producto.image
-        }
-        producto.description = producto.description.split("\r\n");
-        productModel.update(producto);
+        let id = Number(req.params.id);
+		let productToEdit = productModel.find(id);
 
-        res.redirect("/")
+		productToEdit = {
+			id: productToEdit.id,
+			...req.body,
+			image: req.file ? req.file.filename : productToEdit.image
+		}
+        productToEdit.description = productToEdit.description.split("\r\n");
+
+		productModel.update(productToEdit);
+		res.redirect("/");
     },
 
     borrar: (req, res) => {
