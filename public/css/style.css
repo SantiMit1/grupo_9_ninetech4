@@ -460,6 +460,11 @@ aside.login figure img {
     margin-left: 10px;
 }
 
+label.register-form {
+    font-size: 1.3em;
+    color: #21232A;
+}
+
 main .product-specification {
     background-color: #EEEEEE;
     margin: 0 0 0 auto;
