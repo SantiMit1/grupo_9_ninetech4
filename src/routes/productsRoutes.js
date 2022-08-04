@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/productsController");
-const upload = require("../middlewares/multer");
+const multerCfg = require("../middlewares/multer")
+const upload = multerCfg("Productos");
 
 router.get("/", controller.productos);
 router.get("/carrito", controller.carrito);
